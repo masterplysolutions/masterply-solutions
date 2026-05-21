@@ -79,7 +79,7 @@ export function NavalServiceDetail() {
           </div>
         </div>
 
-        <Button variant="primary" className="mt-4 group cursor-pointer">
+        <Button href="/contato" variant="primary" className="mt-4 group cursor-pointer">
           <span>Solicitar orçamento</span>
           <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Button>

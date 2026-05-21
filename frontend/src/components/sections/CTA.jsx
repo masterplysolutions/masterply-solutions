@@ -53,12 +53,10 @@ export function CTA() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="mt-4"
           >
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" className="inline-block">
-              <Button variant="primary">
-                Solicitar orçamento
-                <ArrowUpRight className="w-4 h-4" />
-              </Button>
-            </a>
+            <Button href="/contato" variant="primary">
+              Solicitar orçamento
+              <ArrowUpRight className="w-4 h-4" />
+            </Button>
           </motion.div>
 
         </div>

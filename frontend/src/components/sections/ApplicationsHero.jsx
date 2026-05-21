@@ -53,7 +53,7 @@ export function ApplicationsHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45, ease: 'easeOut' }}
           >
-            <Button variant="primary" className="group cursor-pointer">
+            <Button href="/contato" variant="primary" className="group cursor-pointer">
               <span>Solicitar orçamento</span>
               <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Button>
