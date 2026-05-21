@@ -4,25 +4,27 @@ import { cn } from '../../lib/utils';
 import logoLight from '../../assets/logo-light.svg';
 import { Button } from '../ui/button';
 import { NewsletterInput } from '../ui/NewsletterInput';
+import { TextLink } from '../ui/TextLink';
 import { STATIC_PRODUCTS } from '../../data/mocks';
 
 export function Footer({ className, activePath = "/", ...props }) {
   const quickLinks = [
     { label: 'Início', href: '/' },
-    { label: 'Sobre nós', href: '/sobre' },
+    { label: 'Sobre nós', href: '/sobre-nos' },
     { label: 'Aplicações', href: '/aplicacoes' },
+    { label: 'Serviços', href: '/servicos' },
     { label: 'Blog', href: '/blog' }
   ];
 
   const serviceLinks = STATIC_PRODUCTS.map((p) => ({
     label: p.title,
-    href: `/produtos#${p.id}`,
+    href: `/servicos#${p.id}`,
   }));
 
   const legalLinks = [
-    { label: 'Políticas de privacidade', href: '#privacidade' },
-    { label: 'Termos de Serviço', href: '#termos' },
-    { label: 'Cookies', href: '#cookies' }
+    { label: 'Políticas de privacidade', href: '/politica-de-privacidade' },
+    { label: 'Termos de Uso', href: '/termos-de-uso' },
+    { label: 'Política de Cookies', href: '/politica-de-cookies' }
   ];
 
   return (
@@ -81,7 +83,7 @@ export function Footer({ className, activePath = "/", ...props }) {
 
           <Button
             as="a"
-            href="#contato"
+            href="/contato"
             variant="primary"
             className={cn(
               "px-8 py-3 h-12 text-[14px] font-sans font-semibold transition-all duration-300 rounded-none w-fit",
@@ -98,17 +100,26 @@ export function Footer({ className, activePath = "/", ...props }) {
           <h6 className="font-sans text-[12px] font-bold text-[#c89b3d] uppercase tracking-wider">
             Serviços
           </h6>
-          <ul className="flex flex-col gap-4">
-            {serviceLinks.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className="font-sans text-[14px] font-normal text-[#9ca3af] hover:text-[#fafafa] transition-colors duration-200"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+          <ul className="flex flex-col gap-1 items-start">
+            {serviceLinks.map((item) => {
+              const isActive = activePath === item.href;
+              return (
+                <li key={item.label}>
+                  <TextLink
+                    href={item.href}
+                    active={isActive}
+                    className={cn(
+                      "px-0 text-[14px] font-normal text-[#9ca3af] hover:text-[#fafafa]",
+                      isActive
+                        ? "border-[#c89b3d] text-[#fafafa]"
+                        : "hover:border-[#c89b3d]"
+                    )}
+                  >
+                    {item.label}
+                  </TextLink>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -117,17 +128,26 @@ export function Footer({ className, activePath = "/", ...props }) {
           <h6 className="font-sans text-[12px] font-bold text-[#c89b3d] uppercase tracking-wider">
             Legal
           </h6>
-          <ul className="flex flex-col gap-4">
-            {legalLinks.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className="font-sans text-[14px] font-normal text-[#9ca3af] hover:text-[#fafafa] transition-colors duration-200"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+          <ul className="flex flex-col gap-1 items-start">
+            {legalLinks.map((item) => {
+              const isActive = activePath === item.href;
+              return (
+                <li key={item.label}>
+                  <TextLink
+                    href={item.href}
+                    active={isActive}
+                    className={cn(
+                      "px-0 text-[14px] font-normal text-[#9ca3af] hover:text-[#fafafa]",
+                      isActive
+                        ? "border-[#c89b3d] text-[#fafafa]"
+                        : "hover:border-[#c89b3d]"
+                    )}
+                  >
+                    {item.label}
+                  </TextLink>
+                </li>
+              );
+            })}
           </ul>
         </div>
 

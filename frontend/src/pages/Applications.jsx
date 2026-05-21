@@ -1,18 +1,24 @@
 import React from 'react';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
+import { ApplicationsHero } from '../components/sections/ApplicationsHero';
+import { ApplicationsList } from '../components/sections/ApplicationsList';
+import { CTA } from '../components/sections/CTA';
 
 export function Applications() {
   return (
     <div className="min-h-screen bg-canvas text-ink flex flex-col font-sans">
       <Navbar activePath="/aplicacoes" />
 
-      <main className="w-full flex-grow flex flex-col items-center justify-center py-32 px-6 text-center">
-        <h1 className="text-3xl font-bold font-sans tracking-tight mb-2 text-ink">Aplicações</h1>
-        <p className="text-body max-w-md">Esta página está pronta para receber a componentização oficial do Figma.</p>
+      <main className="w-full flex-grow">
+        <ApplicationsHero />
+        <ApplicationsList />
+        <CTA />
       </main>
 
       <Footer activePath="/aplicacoes" />
     </div>
   );
 }
+
+export default Applications;

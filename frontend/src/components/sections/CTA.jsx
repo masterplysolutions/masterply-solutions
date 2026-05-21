@@ -1,31 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import { Eyebrow } from '../ui/Eyebrow';
 import { Button } from '../ui/button';
+import ctaBg from '../../assets/CTA-BG.png';
 
 export function CTA() {
-  const [bgSrc, setBgSrc] = useState("http://localhost:3845/assets/939e6c3b7eb58c721449ba3edb314561344d42a6.png");
-  const fallbackBg = "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80";
-
   return (
     <section className="w-full bg-canvas px-6 md:px-16 lg:px-20 xl:px-24 py-12 md:py-16" id="contato">
 
       {/* Box Interno */}
       <div className="relative w-full overflow-hidden bg-[#18213c] py-16 md:py-24 px-6 md:px-12 flex flex-col items-center text-center justify-center gap-6 rounded-none">
 
-        {/* Imagem de Fundo com Fallback */}
+        {/* Imagem de Fundo */}
         <img
-          src={bgSrc}
+          src={ctaBg}
           alt=""
-          onError={() => setBgSrc(fallbackBg)}
           className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none select-none"
         />
 
-        {/* Overlay de Contraste */}
-        <div className="absolute inset-0 bg-[#18213c]/85 md:bg-[#18213c]/90 z-10 pointer-events-none" />
-
-        {/* Conteúdo (Z-20 para ficar acima do overlay) */}
+        {/* Conteúdo */}
         <div className="relative z-20 max-w-[1100px] mx-auto flex flex-col items-center gap-6">
 
           <Eyebrow className="text-secondary-500 hover:text-secondary-400">Fale conosco</Eyebrow>

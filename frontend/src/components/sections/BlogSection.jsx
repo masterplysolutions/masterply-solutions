@@ -7,6 +7,10 @@ import { Button } from '../ui/button';
 import { ArticleTile } from '../ui/tiles';
 
 export function BlogSection() {
+  const latestPosts = [...MOCK_POSTS]
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 3);
+
   return (
     <section className="w-full bg-[#fafafa] px-6 md:px-16 lg:px-20 xl:px-24 py-20 md:py-28" id="blog">
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
@@ -49,7 +53,7 @@ export function BlogSection() {
 
         {/* Grid de Artigos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-          {MOCK_POSTS.map((post, idx) => (
+          {latestPosts.map((post, idx) => (
             <motion.div
               key={post.id}
               initial={{ opacity: 0, y: 30 }}
