@@ -70,7 +70,7 @@ export function Products() {
             title={productPlastificado.title}
             description={productPlastificado.description}
             imageSrc={productPlastificado.imageSrc}
-            href={`/produtos#${productPlastificado.id}`}
+            href={`/servicos#${productPlastificado.id}`}
             className="aspect-auto h-full min-h-[500px]"
           />
         </motion.div>
@@ -88,7 +88,7 @@ export function Products() {
               title={productNaval.title}
               description={productNaval.description}
               imageSrc={productNaval.imageSrc}
-              href={`/produtos#${productNaval.id}`}
+              href={`/servicos#${productNaval.id}`}
               className="aspect-auto md:aspect-auto h-full min-h-[240px]"
             />
           </motion.div>
@@ -104,7 +104,7 @@ export function Products() {
               title={productFilmeFaced.title}
               description={productFilmeFaced.description}
               imageSrc={productFilmeFaced.imageSrc}
-              href={`/produtos#${productFilmeFaced.id}`}
+              href={`/servicos#${productFilmeFaced.id}`}
               className="aspect-auto md:aspect-auto h-full min-h-[240px]"
             />
           </motion.div>

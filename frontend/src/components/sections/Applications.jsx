@@ -7,8 +7,10 @@ import {
   CalendarPlus,
   Package,
   Building2,
+  ArrowUpRight,
 } from 'lucide-react';
 import { Eyebrow } from '../ui/Eyebrow';
+import { Button } from '../ui/button';
 import { SegmentTile, FeatureTile } from '../ui/tiles';
 import imgConstrucaoCivil from '../../assets/construcao-civil-home.png';
 import imgPiscinaAltoPadrao from '../../assets/piscina-alto-padrao-home.png';
@@ -120,7 +122,7 @@ export function Applications() {
                 description={item.description}
                 imageSrc={item.imageSrc}
                 icon={item.icon}
-                href={`/aplicacoes#${item.id}`}
+                onClick={(e) => e.preventDefault()}
               />
             </motion.div>
           ))}
@@ -144,11 +146,25 @@ export function Applications() {
                 title={item.title}
                 description={item.description}
                 icon={item.icon}
-                href={`/aplicacoes#${item.id}`}
+                onClick={(e) => e.preventDefault()}
               />
             </motion.div>
           ))}
         </div>
+
+        {/* CTA — Ver todas as aplicações */}
+        <motion.div
+          className="flex justify-center mt-6"
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+        >
+          <Button href="/aplicacoes" variant="primary" className="group cursor-pointer">
+            <span>Ver todas as aplicações</span>
+            <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
