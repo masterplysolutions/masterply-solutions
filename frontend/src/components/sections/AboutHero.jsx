@@ -72,7 +72,7 @@ export function AboutHero() {
       >
         <img
           src={bgHeroAbout}
-          alt=""
+          alt="Parceiro estratégico de compensados Masterply"
           className="object-cover w-full h-full absolute inset-0 z-0"
         />
         {/* Máscara sutil no topo para contraste com a Navbar transparente */}

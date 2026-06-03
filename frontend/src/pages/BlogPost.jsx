@@ -24,9 +24,9 @@ function NotFoundState() {
       <Navbar activePath="/blog" lightBackground />
       <main className="flex-grow flex flex-col items-center justify-center text-center px-6 py-32 gap-6">
         <Eyebrow>Blog</Eyebrow>
-        <h1 className="font-sans font-bold tracking-tight text-ink text-[28px] md:text-[36px] leading-tight max-w-lg">
-          Não encontramos o artigo que você procura.
-        </h1>
+          <h2 className="font-sans font-bold tracking-tight text-ink text-[28px] md:text-[36px] leading-tight max-w-lg">
+            Não encontramos o artigo que você procura.
+          </h2>
         <p className="font-sans text-slate-600 max-w-md">
           O conteúdo pode ter sido movido ou removido. Volte para a listagem e
           explore os outros artigos disponíveis.
@@ -157,7 +157,7 @@ export function BlogPost() {
           <div className="relative w-full overflow-hidden bg-[#18213c] py-16 md:py-24 px-6 md:px-12 flex flex-col items-center text-center justify-center gap-6 rounded-none">
             <img
               src={ctaBg}
-              alt=""
+              alt="Fundo decorativo Masterply"
               className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none select-none"
             />
             <div className="absolute inset-0 bg-[#18213c]/80 z-10 pointer-events-none" />

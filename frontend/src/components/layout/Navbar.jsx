@@ -90,7 +90,7 @@ export const Navbar = React.forwardRef(({
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden xl:flex items-center gap-4 2xl:gap-8">
           <div className="flex items-center gap-1">
             {navItems.map((item) => {
               const isActive = activePath === item.href
@@ -99,7 +99,7 @@ export const Navbar = React.forwardRef(({
                   key={item.label}
                   href={item.href}
                   className={cn(
-                    "relative font-sans text-sm font-normal tracking-wide px-4 py-2 border-b transition-all duration-300",
+                    "relative font-sans text-[13px] 2xl:text-sm font-normal tracking-wide px-2.5 2xl:px-4 py-2 border-b transition-all duration-300",
                     isActive
                       ? cn("border-[#c89b3d] font-semibold", useNavyText ? "text-[#18213c]" : "text-white")
                       : cn(
@@ -121,7 +121,7 @@ export const Navbar = React.forwardRef(({
                 href="/servicos"
                 onMouseEnter={() => setIsServicesOpen(true)}
                 className={cn(
-                  "inline-flex items-center gap-1 font-sans text-sm font-normal tracking-wide px-4 py-2 border-b transition-all duration-300 bg-transparent outline-none cursor-pointer",
+                  "inline-flex items-center gap-1 font-sans text-[13px] 2xl:text-sm font-normal tracking-wide px-2.5 2xl:px-4 py-2 border-b transition-all duration-300 bg-transparent outline-none cursor-pointer",
                   activePath === '/servicos' || isServicesOpen
                     ? cn("border-[#c89b3d] font-semibold", useNavyText ? "text-[#18213c]" : "text-white")
                     : cn(
@@ -176,7 +176,7 @@ export const Navbar = React.forwardRef(({
             href="/contato"
             variant="primary"
             className={cn(
-              "px-8 py-3 h-12 text-sm font-sans font-semibold transition-all duration-300 rounded-none",
+              "px-6 2xl:px-8 py-3 h-12 text-[13px] 2xl:text-sm font-sans font-semibold transition-all duration-300 rounded-none",
               "bg-[#c89b3d] text-[#18213c] hover:bg-[#ae7d30] hover:text-[#372111] border border-transparent shadow-md"
             )}
           >
@@ -190,8 +190,12 @@ export const Navbar = React.forwardRef(({
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
           className={cn(
-            "md:hidden p-2 rounded-none transition-colors duration-200 focus:outline-none",
-            useNavyText ? "text-[#18213c] hover:bg-black/5" : "text-white hover:bg-white/10"
+            "xl:hidden p-2 rounded-none transition-colors duration-200 focus:outline-none",
+            scrolled
+              ? "text-white hover:bg-white/10"
+              : useNavyText
+                ? "text-[#18213c] hover:bg-black/5"
+                : "text-[#18213c] lg:text-white hover:bg-black/5 lg:hover:bg-white/10"
           )}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -200,7 +204,7 @@ export const Navbar = React.forwardRef(({
 
       {/* Mobile Drawer Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed top-[74px] left-0 w-full h-[calc(100vh-74px)] z-40 transition-all duration-300 flex flex-col p-6 animate-in fade-in slide-in-from-top-4 duration-200 bg-[#18213c] text-white">
+        <div className="xl:hidden fixed top-[74px] left-0 w-full h-[calc(100vh-74px)] z-40 transition-all duration-300 flex flex-col p-6 animate-in fade-in slide-in-from-top-4 duration-200 bg-[#18213c] text-white">
           <nav className="flex flex-col gap-4 mt-4 mb-8">
             {navItems.map((item) => {
               const isActive = activePath === item.href

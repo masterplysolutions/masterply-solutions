@@ -8,17 +8,20 @@ export const SegmentCard = React.forwardRef(({
   description,
   imageSrc,
   icon: IconComponent = Construction,
-  href = "#",
+  href,
   forceHover = false,
   ...props
 }, ref) => {
+  const Component = href ? 'a' : 'div'
   return (
-    <a
+    <Component
       ref={ref}
-      href={href}
+      href={href || undefined}
       aria-label={title}
       className={cn(
-        "group relative flex flex-col justify-end w-full aspect-[3/4] min-h-[440px] p-8 overflow-hidden rounded-none transition-all duration-300 hover:shadow-xl cursor-pointer bg-[#100900]",
+        "group relative flex flex-col justify-end w-full aspect-[3/4] min-h-[440px] p-8 overflow-hidden rounded-none transition-all duration-300 hover:shadow-xl bg-[#100900]",
+        href && "cursor-pointer",
+        !href && "cursor-default",
         forceHover && "shadow-xl",
         className
       )}
@@ -73,7 +76,7 @@ export const SegmentCard = React.forwardRef(({
           </p>
         )}
       </div>
-    </a>
+    </Component>
   )
 })
 

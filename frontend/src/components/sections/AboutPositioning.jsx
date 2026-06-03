@@ -55,6 +55,7 @@ export function AboutPositioning() {
     <section
       className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 bg-canvas py-20 md:py-28 px-6 md:px-16 lg:px-20 xl:px-24"
       id="about-posicionamento"
+      aria-label="Posicionamento institucional"
     >
       {/* Bloco Esquerdo — Cabeçalho & Manifesto */}
       <motion.div

@@ -7,17 +7,20 @@ export const FeatureCard = React.forwardRef(({
   title,
   description,
   icon: IconComponent = CalendarPlus,
-  href = "#",
+  href,
   forceHover = false,
   ...props
 }, ref) => {
+  const Component = href ? 'a' : 'div'
   return (
-    <a
+    <Component
       ref={ref}
-      href={href}
+      href={href || undefined}
       aria-label={title}
       className={cn(
-        "group relative flex flex-col gap-6 items-start w-full bg-[#f3f4f8] border-l-4 border-solid pl-11 pr-10 py-10 transition-all duration-300 rounded-none cursor-pointer",
+        "group relative flex flex-col gap-6 items-start w-full bg-[#f3f4f8] border-l-4 border-solid pl-11 pr-10 py-10 transition-all duration-300 rounded-none",
+        href && "cursor-pointer",
+        !href && "cursor-default",
         forceHover 
           ? "border-[#c89b3d] shadow-md" 
           : "border-[#18213c] hover:border-[#c89b3d] hover:shadow-md",
@@ -49,7 +52,7 @@ export const FeatureCard = React.forwardRef(({
           </p>
         )}
       </div>
-    </a>
+    </Component>
   )
 })
 

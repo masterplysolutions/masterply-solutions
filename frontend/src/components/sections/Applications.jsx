@@ -122,7 +122,6 @@ export function Applications() {
                 description={item.description}
                 imageSrc={item.imageSrc}
                 icon={item.icon}
-                onClick={(e) => e.preventDefault()}
               />
             </motion.div>
           ))}
@@ -146,7 +145,6 @@ export function Applications() {
                 title={item.title}
                 description={item.description}
                 icon={item.icon}
-                onClick={(e) => e.preventDefault()}
               />
             </motion.div>
           ))}

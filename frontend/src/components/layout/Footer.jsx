@@ -35,10 +35,10 @@ export function Footer({ className, activePath = "/", ...props }) {
     >
       {/* Main Content Area */}
       {/* AJUSTE CRÍTICO 2: Removido o max-w-7xl e o px-12 antigo. Agora ele preenche 100% alinhado com a borda do site */}
-      <div className="w-full py-16 md:py-20 flex flex-col lg:flex-row gap-12 lg:gap-12 xl:gap-16 justify-between items-start">
+      <div className="w-full pt-16 pb-10 md:pt-20 md:pb-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 lg:grid-cols-12 gap-10 sm:gap-8 md:gap-10 lg:gap-8 xl:gap-12 items-start">
 
         {/* Brand Column */}
-        <div className="flex flex-col gap-6 max-w-sm w-full">
+        <div className="flex flex-col gap-6 max-w-sm w-full sm:col-span-2 md:col-span-6 lg:col-span-3">
           <a
             href="/"
             className="flex items-center shrink-0 w-[240px] md:w-[300px] lg:w-[300px] xl:w-[360px] h-[26px] md:h-[32px] lg:h-[36px] xl:h-[40px] relative transition-transform duration-200 active:scale-[0.98]"
@@ -55,7 +55,7 @@ export function Footer({ className, activePath = "/", ...props }) {
         </div>
 
         {/* Quick Links Column */}
-        <div className="flex flex-col gap-6 shrink-0 min-w-[140px]">
+        <div className="flex flex-col gap-6 shrink-0 min-w-[140px] sm:col-span-1 md:col-span-4 lg:col-span-2">
           <h6 className="font-sans text-[12px] font-bold text-[#c89b3d] uppercase tracking-wider">
             Links Rápidos
           </h6>
@@ -96,7 +96,7 @@ export function Footer({ className, activePath = "/", ...props }) {
         </div>
 
         {/* Services Column */}
-        <div className="flex flex-col gap-6 shrink-0 min-w-[180px]">
+        <div className="flex flex-col gap-6 shrink-0 min-w-[180px] sm:col-span-1 md:col-span-4 lg:col-span-2">
           <h6 className="font-sans text-[12px] font-bold text-[#c89b3d] uppercase tracking-wider">
             Serviços
           </h6>
@@ -124,7 +124,7 @@ export function Footer({ className, activePath = "/", ...props }) {
         </div>
 
         {/* Legal Column */}
-        <div className="flex flex-col gap-6 shrink-0 min-w-[140px]">
+        <div className="flex flex-col gap-6 shrink-0 min-w-[140px] sm:col-span-1 md:col-span-4 lg:col-span-2">
           <h6 className="font-sans text-[12px] font-bold text-[#c89b3d] uppercase tracking-wider">
             Legal
           </h6>
@@ -152,7 +152,7 @@ export function Footer({ className, activePath = "/", ...props }) {
         </div>
 
         {/* Newsletter Column */}
-        <div className="flex flex-col gap-5 max-w-[284px] w-full">
+        <div className="flex flex-col gap-5 max-w-[284px] w-full sm:col-span-1 md:col-span-6 lg:col-span-3 lg:max-w-none">
           <h6 className="font-sans text-[12px] font-bold text-[#c89b3d] uppercase tracking-wider">
             Newsletter
           </h6>
