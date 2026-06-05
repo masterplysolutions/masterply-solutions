@@ -2,7 +2,8 @@
 export const companySpecs = {
   name: 'Masterply Solutions',
   domain: 'masterply.com.br',
-  email: 'contato@masterply.com.br',
+  email: 'adm02@mpsmasterply.com',
+  phone: '+55 (42) 99976-6932',
 };
 
 const lastUpdated = '21 de Maio de 2026';

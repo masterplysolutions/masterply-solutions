@@ -101,6 +101,21 @@ export const STATIC_PRODUCTS = [
       "Pisos de carrocerias e furgões frigoríficos",
       "Fôrmas para concreto com alta exigência de estanqueidade"
     ]
+  },
+  {
+    id: "compensado-antiderrapante",
+    title: "Compensado Antiderrapante",
+    description: "Desenvolvido para coberturas e plataformas que exigem máxima segurança, estabilidade e aderência, mesmo quando molhadas. Com uma superfície texturizada de alta resistência, previne acidentes e suporta cargas pesadas em ambientes industriais e logísticos.",
+    benefits: [
+      "Máxima segurança: Textura em relevo que evita escorregamentos",
+      "Alta resistência mecânica: Suporta tráfego intenso e movimentação de cargas",
+      "Durabilidade estendida: Barreira altamente resistente ao desgaste físico e às intempéries"
+    ],
+    applications: [
+      "Pisos de caminhões, carretas, containers e vagões",
+      "Plataformas de trabalho, andaimes e passarelas operacionais",
+      "Arquibancadas, palcos e estruturas para eventos de grande porte"
+    ]
   }
 ];
 

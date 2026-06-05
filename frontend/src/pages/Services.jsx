@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { ServicesHero } from '../components/sections/ServicesHero';
 import { ProductServiceDetail } from '../components/sections/ProductServiceDetail';
 import { FilmeFacedServiceDetail } from '../components/sections/FilmeFacedServiceDetail';
 import { NavalServiceDetail } from '../components/sections/NavalServiceDetail';
+import { AntiderrapanteServiceDetail } from '../components/sections/AntiderrapanteServiceDetail';
 import { BlogSection } from '../components/sections/BlogSection';
 import { CTA } from '../components/sections/CTA';
 
@@ -30,6 +31,7 @@ export function Services() {
         <ProductServiceDetail />
         <FilmeFacedServiceDetail />
         <NavalServiceDetail />
+        <AntiderrapanteServiceDetail />
         <BlogSection />
         <CTA />
       </main>

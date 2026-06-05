@@ -1,10 +1,13 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import { Eyebrow } from '../ui/Eyebrow';
 import { ChecklistItem } from '../ui/ChecklistItem';
 import { Button } from '../ui/button';
-import imgFilmeFaced from '../../assets/servico-filmefaced.png';
+import { ImageCarousel } from '../ui/ImageCarousel';
+import img1 from '../../assets/Filme Faced1.jpg';
+import img2 from '../../assets/Filme Faced2.jpg';
+import img3 from '../../assets/Filme Faced3.jpg';
+import img4 from '../../assets/Filme Faced4.jpg';
 
 const advantages = [
   'Alta reutilização',
@@ -76,10 +79,9 @@ export function FilmeFacedServiceDetail() {
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
       >
-        <img
-          src={imgFilmeFaced}
-          alt="Filme Faced em uso"
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.01]"
+        <ImageCarousel
+          images={[img1, img2, img3, img4]}
+          alt="Filme Faced"
         />
       </motion.div>
     </section>

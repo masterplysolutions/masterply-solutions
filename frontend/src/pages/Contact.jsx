@@ -45,13 +45,13 @@ export function Contact() {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 w-full">
               <ContactLink
                 icon={Phone}
-                text="(DD) 9 XXXX-XXXX"
-                href="tel:+5500000000000"
+                text="+55 (42) 99976-6932"
+                href="tel:+5542999766932"
               />
               <ContactLink
                 icon={Mail}
-                text="contato@nome.com.br"
-                href="mailto:contato@nome.com.br"
+                text="adm02@mpsmasterply.com"
+                href="mailto:adm02@mpsmasterply.com"
               />
             </div>
 
@@ -72,7 +72,7 @@ export function Contact() {
                 sobre os próximos passos.
               </p>
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5542999766932?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20falar%20com%20a%20equipe%20comercial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 font-semibold text-[15px] text-[#25D366] hover:underline w-fit"
