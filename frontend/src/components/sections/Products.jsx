@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Eyebrow } from '../ui/Eyebrow';
 import { ProductTypeTile } from '../ui/tiles';
-import imgPlastificado from '../../assets/compensado-plastificado-home.png';
-import imgNaval from '../../assets/compensado-naval-home.png';
-import imgFilmeFaced from '../../assets/filme-faced-home.png';
+import imgPlastificado from '../../assets/plastificado.jpg';
+import imgNaval from '../../assets/Compensado Naval.jpg';
+import imgFilmeFaced from '../../assets/Filme Faced1.jpg';
 import imgAntiderrapante from '../../assets/Compensado Antiderrapante (1).jpg';
 
 const productPlastificado = {
