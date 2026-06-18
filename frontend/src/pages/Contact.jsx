@@ -45,7 +45,7 @@ export function Contact() {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 w-full">
               <ContactLink
                 icon={Phone}
-                text="+55 (42) 99976-6932"
+                text="+55 42 99976-6932"
                 href="tel:+5542999766932"
               />
               <ContactLink

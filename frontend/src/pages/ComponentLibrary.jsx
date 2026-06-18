@@ -297,12 +297,12 @@ function ContactSection() {
       <ContactLink
         icon={PhoneCall}
         text="(DD) 9 XXXX-XXXX"
-        href="tel:+5511999999999"
+        href="tel:+5542999766932"
       />
       <ContactLink
         icon={Mail}
-        text="contato@nome.com.br"
-        href="mailto:contato@nome.com.br"
+        text="adm02@mpsmasterply.com"
+        href="mailto:adm02@mpsmasterply.com"
       />
     </div>
   );
@@ -312,12 +312,12 @@ function ContactSection() {
                     <ContactLink
                       icon={PhoneCall}
                       text="(DD) 9 XXXX-XXXX"
-                      href="tel:+5511999999999"
+                      href="tel:+5542999766932"
                     />
                     <ContactLink
                       icon={Mail}
-                      text="contato@nome.com.br"
-                      href="mailto:contato@nome.com.br"
+                      text="adm02@mpsmasterply.com"
+                      href="mailto:adm02@mpsmasterply.com"
                     />
                   </div>
                 </LibraryComponentItem>

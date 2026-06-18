@@ -1,9 +1,12 @@
 // Especificações da empresa — alteração centralizada propaga para todos os textos legais.
 export const companySpecs = {
   name: 'Masterply Solutions',
-  domain: 'masterply.com.br',
+  legalName: 'Carassa Compensados Ltda.',
+  cnpj: '06.243.176/0001-50',
+  domain: 'mpsmasterply.com',
   email: 'adm02@mpsmasterply.com',
-  phone: '+55 (42) 99976-6932',
+  phone: '+55 42 99976-6932',
+  whatsappLink: 'https://wa.me/5542999766932'
 };
 
 const lastUpdated = '21 de Maio de 2026';
@@ -15,7 +18,7 @@ export const privacyPolicyHtml = `
   <p class="lead">Última atualização: ${lastUpdated}</p>
 
   <h2>1. Introdução</h2>
-  <p>A ${companySpecs.name} ("nós", "nosso") respeita a sua privacidade e está comprometida em proteger os dados pessoais que você compartilha conosco. Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos as suas informações ao navegar pelo nosso site <strong>${companySpecs.domain}</strong>.</p>
+  <p>A plataforma ${companySpecs.name} (operada por ${companySpecs.legalName}, CNPJ: ${companySpecs.cnpj}, doravante "nós", "nosso") respeita a sua privacidade e está comprometida em proteger os dados pessoais que você compartilha conosco. Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos as suas informações ao navegar pelo nosso site <strong>${companySpecs.domain}</strong>.</p>
 
   <h2>2. Quais dados coletamos</h2>
   <p>Coletamos apenas os dados estritamente necessários para fornecer os nossos serviços e responder ao seu contato. Entre os dados que podem ser coletados estão:</p>
@@ -66,7 +69,7 @@ export const termsOfUseHtml = `
   <p>Ao acessar ou utilizar o site <strong>${companySpecs.domain}</strong> ("Site"), você concorda em cumprir e ficar vinculado a estes Termos de Uso. Se você não concorda com qualquer cláusula, recomendamos que interrompa o uso do Site imediatamente.</p>
 
   <h2>2. Objeto</h2>
-  <p>O Site é mantido pela ${companySpecs.name} com a finalidade de apresentar informações institucionais, técnicas e comerciais sobre seus produtos e serviços. Não realizamos vendas diretamente pelo Site; todo contato comercial deve ser feito pelos canais oficiais de atendimento.</p>
+  <p>O Site é operado pela ${companySpecs.legalName} (CNPJ: ${companySpecs.cnpj}), sob o nome fantasia ${companySpecs.name}, com a finalidade de apresentar informações institucionais, técnicas e comerciais sobre seus produtos e serviços. Não realizamos vendas diretamente pelo Site; todo contato comercial deve ser feito pelos canais oficiais de atendimento.</p>
 
   <h2>3. Uso permitido</h2>
   <p>Você concorda em utilizar o Site apenas para fins lícitos e em conformidade com estes Termos. É expressamente vedado:</p>
@@ -107,8 +110,8 @@ export const cookiePolicyHtml = `
   <h2>1. O que são cookies</h2>
   <p>Cookies são pequenos arquivos de texto armazenados pelo seu navegador quando você visita um site. Eles ajudam a lembrar de preferências, manter sessões abertas e fornecer dados sobre como o site é utilizado.</p>
 
-  <h2>2. Como o ${companySpecs.name} usa cookies</h2>
-  <p>O site <strong>${companySpecs.domain}</strong> utiliza cookies para os seguintes propósitos:</p>
+  <h2>2. Como a ${companySpecs.name} usa cookies</h2>
+  <p>O site <strong>${companySpecs.domain}</strong> (operado por ${companySpecs.legalName}, CNPJ: ${companySpecs.cnpj}) utiliza cookies para os seguintes propósitos:</p>
   <ul>
     <li><strong>Essenciais:</strong> garantem o funcionamento básico do site, como envio de formulários e segurança.</li>
     <li><strong>Analíticos:</strong> nos ajudam a entender quais páginas são mais acessadas, como a navegação flui e onde podemos melhorar a experiência. Os dados são tratados de forma agregada e anônima.</li>
