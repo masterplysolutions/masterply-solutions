@@ -1,20 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
-import { MOCK_POSTS } from '../../data/mocks';
+import { sanityClient } from '../../lib/sanity';
 import { Eyebrow } from '../ui/Eyebrow';
 import { Button } from '../ui/button';
 import { ArticleTile } from '../ui/tiles';
 
+// Query GROQ — 3 posts mais recentes para a Home, com categoria expandida.
+const LATEST_POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc)[0...3] {
+  _id,
+  title,
+  "slug": slug.current,
+  publishedAt,
+  excerpt,
+  category->{ title }
+}`;
+
 export function BlogSection() {
-  const latestPosts = [...MOCK_POSTS]
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3);
+  const [latestPosts, setLatestPosts] = useState([]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    sanityClient
+      .fetch(LATEST_POSTS_QUERY)
+      .then((data) => {
+        if (!cancelled) {
+          setLatestPosts(Array.isArray(data) ? data : []);
+        }
+      })
+      .catch((err) => {
+        console.error('Erro ao buscar posts recentes do Sanity:', err);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <section className="w-full bg-[#fafafa] px-6 md:px-16 lg:px-20 xl:px-24 py-20 md:py-28" id="blog">
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
-        
+
         {/* Header Layout Assíncrono */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
 
@@ -52,29 +79,31 @@ export function BlogSection() {
         </div>
 
         {/* Grid de Artigos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-          {latestPosts.map((post, idx) => (
-            <motion.div
-              key={post.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.6,
-                delay: idx * 0.1,
-                ease: "easeOut"
-              }}
-              className="h-full"
-            >
-              <ArticleTile
-                category={post.category}
-                title={post.title}
-                description={post.excerpt}
-                href={`/blog/${post.slug}`}
-              />
-            </motion.div>
-          ))}
-        </div>
+        {latestPosts.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            {latestPosts.map((post, idx) => (
+              <motion.div
+                key={post._id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: idx * 0.1,
+                  ease: "easeOut"
+                }}
+                className="h-full"
+              >
+                <ArticleTile
+                  category={post.category?.title}
+                  title={post.title}
+                  description={post.excerpt}
+                  href={`/blog/${post.slug}`}
+                />
+              </motion.div>
+            ))}
+          </div>
+        )}
 
         {/* Botão Global (somente mobile, após os posts) */}
         <motion.div

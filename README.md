@@ -35,4 +35,32 @@ Este repositório suporta uma arquitetura monorepo. O aplicativo React principal
    `npm run dev`
 
 ---
+
+## 🧪 Sanity Studio (CMS Headless)
+
+O conteúdo dinâmico do site (artigos do blog, categorias) é gerenciado por uma instância do Sanity Studio que vive na pasta `studio/` deste monorepo.
+
+### Como executar o Studio localmente
+
+1. Acesse o diretório do studio:
+   `cd studio`
+
+2. Instale as dependências:
+   `npm install`
+
+3. Inicie o servidor de desenvolvimento do Sanity:
+   `npm run dev`
+
+4. Para gerar a build de produção do Studio:
+   `npm run build`
+
+5. Para publicar o Studio na nuvem do Sanity:
+   `npm run deploy`
+
+### Documentação útil
+- [Getting started com Sanity](https://www.sanity.io/docs/introduction/getting-started)
+- [Estendendo o Studio com plugins](https://www.sanity.io/docs/content-studio/extending)
+- [Comunidade Sanity](https://www.sanity.io/community/join)
+
+---
 *Documentação mantida com rigor arquitetônico e design system unificado para interação segura com IA e Agentes Autônomos.*

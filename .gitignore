@@ -59,3 +59,15 @@ dist
 
 # TestSprite Artifacts & Temporary Reports
 testsprite_tests/
+
+# Sanity Studio
+/studio/node_modules
+/studio/.pnp
+/studio/.pnp.js
+/studio/dist
+/studio/.sanity
+/studio/logs
+/studio/coverage
+/studio/*.tsbuildinfo
+/studio/*.local
+/studio/*.pem
