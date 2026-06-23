@@ -191,68 +191,66 @@ export function MultiStepForm({ onSubmitSuccess, className }) {
         >
           <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
           <div className="flex flex-col gap-4 p-6 w-full">
-            {step === 1 ? (
-              <div className="flex flex-col gap-4 animate-fade-in">
-                <Input
-                  label="Nome completo:"
-                  placeholder="Pedro Duarte"
-                  name="name"
-                  value={formData.name}
-                  onChange={(e) => handleInputChange('name', e.target.value)}
-                  error={errors.name}
-                  disabled={isSubmitting}
-                />
-                <Input
-                  label="Nome da empresa:"
-                  placeholder="Masterply solutions..."
-                  name="company"
-                  value={formData.company}
-                  onChange={(e) => handleInputChange('company', e.target.value)}
-                  error={errors.company}
-                  disabled={isSubmitting}
-                />
-                <Input
-                  label="Telefone / WhatsApp:"
-                  placeholder="(DD) 9 XXXX-XXXX"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange('phone', e.target.value)}
-                  error={errors.phone}
-                  disabled={isSubmitting}
-                />
-              </div>
-            ) : (
-              <div className="flex flex-col gap-4 animate-fade-in">
-                <Input
-                  label="E-mail para contato:"
-                  placeholder="nome@gmail.com"
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  error={errors.email}
-                  disabled={isSubmitting}
-                />
-                <Input
-                  label="Tipo de projeto:"
-                  placeholder="Construção civil.."
-                  name="projectType"
-                  value={formData.projectType}
-                  onChange={(e) => handleInputChange('projectType', e.target.value)}
-                  error={errors.projectType}
-                  disabled={isSubmitting}
-                />
-                <Textarea
-                  label="Mensagem:"
-                  placeholder="Digite aqui sua mensagem...."
-                  name="message"
-                  value={formData.message}
-                  onChange={(e) => handleInputChange('message', e.target.value)}
-                  error={errors.message}
-                  disabled={isSubmitting}
-                />
-              </div>
-            )}
+            <div className={cn("flex flex-col gap-4 animate-fade-in", step !== 1 && "hidden")}>
+              <Input
+                label="Nome completo:"
+                placeholder="Pedro Duarte"
+                name="name"
+                value={formData.name}
+                onChange={(e) => handleInputChange('name', e.target.value)}
+                error={errors.name}
+                disabled={isSubmitting}
+              />
+              <Input
+                label="Nome da empresa:"
+                placeholder="Masterply solutions..."
+                name="company"
+                value={formData.company}
+                onChange={(e) => handleInputChange('company', e.target.value)}
+                error={errors.company}
+                disabled={isSubmitting}
+              />
+              <Input
+                label="Telefone / WhatsApp:"
+                placeholder="(DD) 9 XXXX-XXXX"
+                name="phone"
+                value={formData.phone}
+                onChange={(e) => handleInputChange('phone', e.target.value)}
+                error={errors.phone}
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className={cn("flex flex-col gap-4 animate-fade-in", step !== 2 && "hidden")}>
+              <Input
+                label="E-mail para contato:"
+                placeholder="nome@gmail.com"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={(e) => handleInputChange('email', e.target.value)}
+                error={errors.email}
+                disabled={isSubmitting}
+              />
+              <Input
+                label="Tipo de projeto:"
+                placeholder="Construção civil.."
+                name="projectType"
+                value={formData.projectType}
+                onChange={(e) => handleInputChange('projectType', e.target.value)}
+                error={errors.projectType}
+                disabled={isSubmitting}
+              />
+              <Textarea
+                label="Mensagem:"
+                placeholder="Digite aqui sua mensagem...."
+                name="message"
+                value={formData.message}
+                onChange={(e) => handleInputChange('message', e.target.value)}
+                error={errors.message}
+                disabled={isSubmitting}
+              />
+            </div>
             {submitStatus === 'error' && (
               <p className="font-sans text-sm text-rose-500 font-medium text-center animate-fade-in mt-2">
                 Erro ao enviar a mensagem. Por favor, tente novamente.
